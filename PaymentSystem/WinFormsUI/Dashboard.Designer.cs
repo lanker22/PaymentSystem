@@ -130,6 +130,7 @@ namespace WinFormsUI
             this.OverdraftProtectionLabel.Size = new System.Drawing.Size(349, 21);
             this.OverdraftProtectionLabel.TabIndex = 8;
             this.OverdraftProtectionLabel.Text = "You had an overdraft protection transfer of £0.00";
+            this.OverdraftProtectionLabel.Visible = false;
             // 
             // RecordTransactionsButton
             // 
@@ -139,6 +140,7 @@ namespace WinFormsUI
             this.RecordTransactionsButton.TabIndex = 9;
             this.RecordTransactionsButton.Text = "Record Transactions";
             this.RecordTransactionsButton.UseVisualStyleBackColor = true;
+            this.RecordTransactionsButton.Click += RecordTransactionsButton_Click;
             // 
             // CustomerLabel
             // 
@@ -167,7 +169,7 @@ namespace WinFormsUI
             this.SavingsBalanceLabel.TabIndex = 12;
             this.SavingsBalanceLabel.Text = "£0.00";
             // 
-            // Transactions
+            // Dashboard
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -185,7 +187,7 @@ namespace WinFormsUI
             this.Controls.Add(this.SavingsTransactionsRecord);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
-            this.Name = "Transactions";
+            this.Name = "Dashboard";
             this.Text = "Transactions";
             this.ResumeLayout(false);
             this.PerformLayout();

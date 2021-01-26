@@ -17,15 +17,19 @@ namespace WinFormsUI
         static void Main()
         {
             var container = ContainerConfig.Configure();
-            using(var scope = container.BeginLifetimeScope())
-            {
-                var account = scope.Resolve<IAccount>();
-                var customer = scope.Resolve<ICustomer>();
-            }
+            using var scope = container.BeginLifetimeScope();
+            var account = scope.Resolve<IAccount>();
+            var customer = scope.Resolve<ICustomer>();
+            Start(customer);
+        }
+
+        static void Start(ICustomer customer)
+        {
+            MessageBox.Show("Starting");
             Application.SetHighDpiMode(HighDpiMode.SystemAware);
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new Dashboard());
+            Application.Run(new Dashboard(customer));
         }
     }
 }
